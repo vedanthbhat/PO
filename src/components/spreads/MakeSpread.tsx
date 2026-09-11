@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { SQI_PROJECT, SPECULATE_PROJECT } from '../../data/portfolioData';
+import { LiveSiteLink } from '../ui/LiveSiteLink';
 import { ArtifactExhibit } from '../ui/ArtifactExhibit';
 import { HandwrittenNote } from '../ui/HandwrittenNote';
 import { 
@@ -86,8 +87,11 @@ export const MakeSpread: React.FC<MakeSpreadProps> = ({ onBackToKnife, onSelectN
         <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-[#1C1B18] tracking-tight">
           {SQI_PROJECT.title}
         </h2>
-        <div className="font-serif-display text-lg sm:text-xl text-[#5C584E] italic mt-1 mb-6">
+        <div className="font-serif-display text-lg sm:text-xl text-[#5C584E] italic mt-1">
           “{SQI_PROJECT.tagline}”
+        </div>
+        <div className="mt-3 mb-6">
+          <LiveSiteLink url={SQI_PROJECT.liveUrl!} />
         </div>
 
         {/* Narrative Grid: The Question & The Problem */}
@@ -235,8 +239,11 @@ export const MakeSpread: React.FC<MakeSpreadProps> = ({ onBackToKnife, onSelectN
         <h2 className="font-display text-2xl sm:text-3xl font-extrabold text-[#1C1B18] tracking-tight">
           {SPECULATE_PROJECT.title}
         </h2>
-        <div className="font-serif-display text-lg text-[#5C584E] italic mt-1 mb-6">
+        <div className="font-serif-display text-lg text-[#5C584E] italic mt-1">
           “{SPECULATE_PROJECT.tagline}”
+        </div>
+        <div className="mt-3 mb-6">
+          <LiveSiteLink url={SPECULATE_PROJECT.liveUrl!} />
         </div>
 
         {/* Question & Premise */}

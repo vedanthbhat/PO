@@ -61,6 +61,7 @@ export interface ProjectCaseStudy {
   whatFailed?: string;
   realization: string;
   roleExplanation?: string;
+  liveUrl?: string;
   artifacts: Artifact[];
   tags: string[];
 }

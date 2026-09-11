@@ -35,7 +35,7 @@ const PHOTO_SLOTS: PhotoSlot[] = [
     defaultMock: 'Make.com Scenario 7146849 diagram'
   },
   {
-    id: 'photo-headshot',
+    id: 'photo-formal',
     category: 'Recent Uploads',
     title: 'Professional Headshot / Portrait',
     targetFileName: 'WhatsApp Image ... 6.51.11 PM.jpeg',
@@ -43,11 +43,11 @@ const PHOTO_SLOTS: PhotoSlot[] = [
     defaultMock: 'Formal Profile Polaroid'
   },
   {
-    id: 'photo-speaking',
+    id: 'photo-presentation',
     category: 'Recent Uploads',
     title: 'Life at MU · Speaking Competition',
     targetFileName: 'WhatsApp Image ... 6.53.13 PM.jpeg',
-    recommendedSection: 'Me Spread · FIG. 12 Cohort Forum',
+    recommendedSection: 'Me Spread · Cohort Forum',
     defaultMock: 'Stage presentation card'
   },
   {
@@ -91,12 +91,28 @@ const PHOTO_SLOTS: PhotoSlot[] = [
     defaultMock: 'Festival organizing card'
   },
   {
-    id: 'photo-interact',
+    id: 'photo-interact-1',
     category: 'Life & Arts',
     title: 'Interact Club · Creative Workshop',
     targetFileName: 'WhatsApp Image ... 7.23.17 PM.jpeg',
-    recommendedSection: 'Live Spread · Community Service Exhibit',
+    recommendedSection: 'Live Spread · Community Service Exhibit 1',
     defaultMock: 'Art workshop card'
+  },
+  {
+    id: 'photo-interact-2',
+    category: 'Life & Arts',
+    title: 'Interact Club · Outreach Group Photo',
+    targetFileName: 'interact-outreach-group.jpeg',
+    recommendedSection: 'Live Spread · Community Service Exhibit 2',
+    defaultMock: 'Children’s home group session'
+  },
+  {
+    id: 'photo-interact-3',
+    category: 'Life & Arts',
+    title: 'Interact Club · Mindfulness Session',
+    targetFileName: 'interact-mindfulness-session.jpeg',
+    recommendedSection: 'Live Spread · Community Service Exhibit 3',
+    defaultMock: 'Group activity circle'
   },
   {
     id: 'art-sqi-1',

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { LANKY_KID_PROJECT } from '../../data/portfolioData';
+import { LiveSiteLink } from '../ui/LiveSiteLink';
 import { ArtifactExhibit } from '../ui/ArtifactExhibit';
 import { HandwrittenNote } from '../ui/HandwrittenNote';
 import { ArrowLeft, Scissors, Ruler, Sparkles, AlertCircle } from 'lucide-react';
@@ -74,8 +75,11 @@ export const CreateSpread: React.FC<CreateSpreadProps> = ({ onBackToKnife, onSel
         <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-[#1C1B18] tracking-tight">
           {LANKY_KID_PROJECT.title}
         </h2>
-        <div className="font-serif-display text-lg sm:text-xl text-[#5C584E] italic mt-1 mb-6">
+        <div className="font-serif-display text-lg sm:text-xl text-[#5C584E] italic mt-1">
           “{LANKY_KID_PROJECT.tagline}”
+        </div>
+        <div className="mt-3 mb-6">
+          <LiveSiteLink url={LANKY_KID_PROJECT.liveUrl!} />
         </div>
 
         {/* Narrative Grid */}

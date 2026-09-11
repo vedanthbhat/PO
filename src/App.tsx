@@ -5,6 +5,7 @@ import { KNIFE_TOOLS } from './data/portfolioData';
 import { SwissArmyKnife } from './components/knife/SwissArmyKnife';
 import { QuickNav } from './components/ui/QuickNav';
 import { HandwrittenNote } from './components/ui/HandwrittenNote';
+import { PhotoUploaderModal } from './components/ui/PhotoUploaderModal';
 import { MakeSpread } from './components/spreads/MakeSpread';
 import { CreateSpread } from './components/spreads/CreateSpread';
 import { BuildSpread } from './components/spreads/BuildSpread';
@@ -20,13 +21,15 @@ import {
   Layers, 
   Sparkles,
   Command,
-  ArrowRight
+  ArrowRight,
+  Upload
 } from 'lucide-react';
 
 export default function App() {
   const [activeTool, setActiveTool] = useState<ToolId | null>(null);
   const [isKnifeOpen, setIsKnifeOpen] = useState<boolean>(false);
   const [isMuted, setIsMuted] = useState<boolean>(false);
+  const [isPhotoModalOpen, setIsPhotoModalOpen] = useState<boolean>(false);
 
   // Toggle knife open / closed
   const handleToggleKnife = useCallback(() => {
@@ -175,6 +178,15 @@ export default function App() {
                     {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
                     <span className="text-[10px] hidden sm:inline">{isMuted ? 'MUTED' : 'CLICK SFX'}</span>
                   </button>
+
+                  <button
+                    onClick={() => setIsPhotoModalOpen(true)}
+                    className="inline-flex items-center gap-1.5 bg-[#EDE8DC] hover:bg-[#E2DDD0] text-[#4A473E] px-3 py-2 rounded text-xs font-mono-code transition-colors"
+                    title="Bulk upload photos & screenshots into the figure slots"
+                  >
+                    <Upload className="w-3.5 h-3.5 text-[#B93829]" />
+                    <span className="text-[10px] hidden sm:inline">UPLOAD PHOTOS</span>
+                  </button>
                 </div>
 
                 {/* Direct Numbered Tool Shortcuts */}
@@ -246,6 +258,12 @@ export default function App() {
           )}
         </AnimatePresence>
       </main>
+
+      {/* Bulk Photo Uploader Modal */}
+      <PhotoUploaderModal
+        isOpen={isPhotoModalOpen}
+        onClose={() => setIsPhotoModalOpen(false)}
+      />
 
       {/* Footer Notebook Rule */}
       <footer className="w-full border-t border-[#DCD6C5] py-4 px-6 text-center font-mono-code text-[10px] text-[#7C7769] flex flex-col sm:flex-row items-center justify-between gap-2 max-w-6xl mx-auto">

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { TONERSCART_PROJECT } from '../../data/portfolioData';
+import { LiveSiteLink } from '../ui/LiveSiteLink';
 import { ArtifactExhibit } from '../ui/ArtifactExhibit';
 import { HandwrittenNote } from '../ui/HandwrittenNote';
 import { ArrowLeft, Building2, Landmark, Truck, FileCheck2, AlertCircle } from 'lucide-react';
@@ -74,8 +75,11 @@ export const VentureSpread: React.FC<VentureSpreadProps> = ({ onBackToKnife, onS
         <h2 className="font-display text-2xl sm:text-4xl font-extrabold text-[#1C1B18] tracking-tight">
           {TONERSCART_PROJECT.title}
         </h2>
-        <div className="font-serif-display text-lg sm:text-xl text-[#5C584E] italic mt-1 mb-6">
+        <div className="font-serif-display text-lg sm:text-xl text-[#5C584E] italic mt-1">
           “{TONERSCART_PROJECT.tagline}”
+        </div>
+        <div className="mt-3 mb-6">
+          <LiveSiteLink url={TONERSCART_PROJECT.liveUrl!} />
         </div>
 
         {/* Narrative Framing */}
